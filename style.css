@@ -22,7 +22,7 @@ body {
 .container > button {
     cursor: pointer;
     font-size: 2rem;
-    border: 1px solid #111;
+    border: none;
     outline: none;
     background-color: #111;
     color: #eee;
@@ -46,4 +46,15 @@ body {
     padding: 10px;
     word-wrap: break-word;
     word-break: break-all;
+    font-family:'Roboto', sans-serif;
+}
+
+.operacao_anterior {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.5rem;
+}
+
+.operacao_atual {
+    color: white;
+    font-size: 2.5rem;
 }
