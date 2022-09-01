@@ -30,6 +30,11 @@ body {
     margin: 0.5px;
 }
 
+.container > button:hover {
+    background: rgb(153, 115, 2);
+    color: #111;
+}
+
 .container > .operador {
     color: rgb(153, 115, 2);
 }

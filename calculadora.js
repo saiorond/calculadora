@@ -13,7 +13,16 @@ class Calculadora {
         this.clear();
     }
 
+    operacaoEscolhida(operacao) {
+        this.operacao = operacao;
+
+        this.operacaoAnterior = `${this.operacaoAtual} ${this.operacao}`;
+        this.operacaoAtual = "";
+    }
+
     mostraNumero(number) {
+        if (this.operacaoAtual.includes(".") && number === ".") return;
+
         this.operacaoAtual = `${this.operacaoAtual}${number.toString()}`;
     }
 
@@ -37,6 +46,13 @@ const calculadora = new Calculadora(
 for (const botaoNumero of botoesNumeros) {
     botaoNumero.addEventListener("click", () => {
         calculadora.mostraNumero(botaoNumero.innerText);
+        calculadora.atualizaDisplay();
+    })
+}
+
+for (const botaoOperador of botoesOperadores) {
+    botaoOperador.addEventListener("click", () => {
+        calculadora.operacaoEscolhida(botaoOperador.innerText);
         calculadora.atualizaDisplay();
     })
 }
