@@ -12,11 +12,45 @@ class Calculadora {
         this.operacaoAtualTexto = operacaoAtualTexto;
         this.clear();
     }
+    
+    calcula() {
+        let resultado;
+
+        const _operacaoAnterior = parseFloat(this.operacaoAnterior);
+        const _operacaoAtual = parseFloat(this.operacaoAtual);
+    
+        if (isNaN(_operacaoAnterior) || isNaN(_operacaoAtual)) return;
+    
+        switch (this.operacao) {
+            case '+':
+                resultado = _operacaoAnterior + _operacaoAtual;
+                break;
+            case '-':
+                resultado = _operacaoAnterior - _operacaoAtual;
+                break;
+             case '÷':
+                resultado = _operacaoAnterior / _operacaoAtual;
+                break;    
+            case '*':
+                resultado = _operacaoAnterior * _operacaoAtual;
+                break;
+            default:
+                return;            
+        }
+
+        this.operacaoAtual = resultado;
+        this.operacao = undefined;
+        this.operacaoAnterior = "";
+    }
 
     operacaoEscolhida(operacao) {
+        if (this.operacaoAnterior !== "") {
+            this.calcula();
+        }
+
         this.operacao = operacao;
 
-        this.operacaoAnterior = `${this.operacaoAtual} ${this.operacao}`;
+        this.operacaoAnterior = this.operacaoAtual;
         this.operacaoAtual = "";
     }
 
@@ -33,7 +67,7 @@ class Calculadora {
     }
  
     atualizaDisplay() {
-        this.operacaoAnteriorTexto.innerText = this.operacaoAnterior;
+        this.operacaoAnteriorTexto.innerText = `${this.operacaoAnterior} ${this.operacao || ""}`;
         this.operacaoAtualTexto.innerText = this.operacaoAtual;
     }
 
