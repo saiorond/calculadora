@@ -95,3 +95,8 @@ botaoLimpaTudo.addEventListener("click", () => {
     calculadora.clear();
     calculadora.atualizaDisplay();
 })
+
+botaoIgual.addEventListener("click", () => {
+    calculadora.calcula();
+    calculadora.atualizaDisplay();
+})
