@@ -48,6 +48,8 @@ class Calculadora {
     }
 
     operacaoEscolhida(operacao) {
+        if (this.operacaoAnterior == "") return;
+
         if (this.operacaoAnterior !== "") {
             this.calcula();
         }
@@ -102,5 +104,10 @@ botaoLimpaTudo.addEventListener("click", () => {
 
 botaoIgual.addEventListener("click", () => {
     calculadora.calcula();
+    calculadora.atualizaDisplay();
+})
+
+botaoDell.addEventListener("click", () => {
+    calculadora.delete();
     calculadora.atualizaDisplay();
 })
