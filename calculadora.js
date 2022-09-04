@@ -12,6 +12,10 @@ class Calculadora {
         this.operacaoAtualTexto = operacaoAtualTexto;
         this.clear();
     }
+
+    delete() {
+        this.operacaoAtual = this.operacaoAtual.toString().slice(0, -1);
+    }
     
     calcula() {
         let resultado;
