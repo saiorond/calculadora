@@ -19,6 +19,10 @@ O projeto da Calculadora tem as mesmas funções que uma calculadora comum; soma
 
 ![Web required](https://github.com/saiorond/calculadora/blob/main/Imagens/screencapture-calculadora-two-indol-vercel-app-2022-09-05-20_08_57.png)
 
+#### Demonstração do projeto:
+
+![Calculadora](https://user-images.githubusercontent.com/98855004/188520815-1e6fbb9f-b7f1-4b80-9612-6d841e3ae58f.gif)
+
 # Tecnologias utilizadas
 
 - HTML / CSS / JavaScript
