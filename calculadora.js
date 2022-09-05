@@ -48,7 +48,7 @@ class Calculadora {
     }
 
     operacaoEscolhida(operacao) {
-        if (this.operacaoAnterior == "") return;
+        if (this.operacaoAtual == "") return;
 
         if (this.operacaoAnterior !== "") {
             this.calcula();
